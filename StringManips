@@ -1,0 +1,72 @@
+public class StringManips {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String phrase = new String ("This is a String test.");
+		int phraseLength;   // number of characters in the phrase String
+		int middleIndex;    // index of the middle character in the String
+		String firstHalf;   // first half of the phrase String
+		String secondHalf;  // second half of the phrase String
+		String switchedPhrase;
+		String middle3;
+		String city;
+		String state;// a new phrase with original halves switched
+		
+
+
+	        Scanner scan = new Scanner (System.in);
+	        
+	       // phrase = scan.nextLine();
+
+		
+	    
+		phraseLength = phrase.length();
+		middleIndex = phraseLength / 2;
+
+		
+		firstHalf = phrase.substring(0,middleIndex);
+		secondHalf = phrase.substring(middleIndex, phraseLength);
+		middle3 = phrase.substring(10,13);
+
+	
+		
+
+		
+		switchedPhrase = firstHalf.concat(secondHalf);
+		switchedPhrase = secondHalf.concat(firstHalf);
+		
+		switchedPhrase = switchedPhrase.replace(' ','*');
+		
+
+		
+		System.out.println();
+		System.out.println ("Original phrase: " + phrase);
+		System.out.println ("Length of the phrase: " + phraseLength +
+				    " characters");
+		System.out.println ("Index of the middle: " + middleIndex);
+		System.out.println ("Character at the middle index: " + 
+				    phrase.charAt(middleIndex));
+		System.out.println("Middle 3 characters: " + middle3);
+		System.out.println ("Switched phrase: " + switchedPhrase);
+		System.out.println();
+
+		
+		System.out.print ("Enter your hometown city: ");
+		city = scan.nextLine();
+		System.out.print ("Enter your hometown state: ");
+		state = scan.nextLine();
+		city = city.toLowerCase();
+		state = state.toUpperCase();
+		
+		String modifiedString = state + city + state;
+        System.out.println("Modified string: " + modifiedString);
+		
+		System.out.println("You've entered " + state);
+		System.out.println("You've entered " + city);
+		System.out.println();
+		scan.close();
+		
+		
+		
+	    }
+	}
